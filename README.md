@@ -1,9 +1,3 @@
-Understood — here is a **clean README without Lambda references**, focused purely on local/server deployment.
-
-You can replace your current `README.md` with this version.
-
----
-
 # Invoice Generator API
 
 A clean architecture-based backend API built with FastAPI to generate professional PDF invoices dynamically.
