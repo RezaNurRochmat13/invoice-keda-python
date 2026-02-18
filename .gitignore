@@ -1,0 +1,89 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Bytecode
+*.pyo
+*.pyd
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+.env/
+.env.*
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Unit Test / Coverage
+# =========================
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+htmlcov/
+
+# =========================
+# VSCode
+# =========================
+.vscode/
+
+# =========================
+# PyCharm
+# =========================
+.idea/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Linux
+# =========================
+*.swp
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.local
+.env.production
+
+# =========================
+# Uvicorn reload artifacts
+# =========================
+*.reload
+
+# =========================
+# SQLite database (if used)
+# =========================
+*.db
+*.sqlite3
