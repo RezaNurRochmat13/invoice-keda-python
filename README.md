@@ -1,23 +1,30 @@
-Invoice Generator API
+Understood — here is a **clean README without Lambda references**, focused purely on local/server deployment.
+
+You can replace your current `README.md` with this version.
+
+---
+
+# Invoice Generator API
 
 A clean architecture-based backend API built with FastAPI to generate professional PDF invoices dynamically.
 
-🚀 Features
+---
 
-Generate professional-styled PDF invoices
+## 🚀 Features
 
-Clean Architecture structure (Router → Service → Core)
+* Generate professional-styled PDF invoices
+* Clean Architecture structure (Router → Service → Core)
+* In-memory PDF streaming (no file storage required)
+* Swagger documentation
+* Production-ready project structure
 
-In-memory PDF streaming (no file storage required)
+---
 
-Swagger documentation
-
-Production-ready project structure
-
-🏗 Architecture Overview
+## 🏗 Architecture Overview
 
 The application follows a layered Clean Architecture approach:
 
+```
 Client
    ↓
 Router (HTTP Controller)
@@ -27,8 +34,11 @@ Service (Business Logic / Use Case)
 Core (PDF Generator - Domain Logic)
    ↓
 Streaming PDF Response
+```
 
-Project Structure
+### Project Structure
+
+```
 project-root/
 │
 ├── app/
@@ -41,46 +51,74 @@ project-root/
 ├── requirements.txt
 ├── start-dev.sh
 └── README.md
+```
 
-📦 Requirements
+---
 
-Python 3.10+
+## 📦 Requirements
 
-pip
+* Python 3.10+
+* pip
+* virtual environment (recommended)
 
-virtual environment (recommended)
+---
 
-🔧 Local Development Setup
-1️⃣ Create Virtual Environment
+## 🔧 Local Development Setup
+
+### 1️⃣ Create Virtual Environment
+
+```bash
 python -m venv venv
 source venv/bin/activate
+```
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3️⃣ Run Development Server
+### 3️⃣ Run Development Server
+
+```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-
+```
 
 Swagger documentation:
 
+```
 http://localhost:8000/docs
+```
 
-🧪 Health Check
+---
+
+## 🧪 Health Check
+
+```bash
 curl http://localhost:8000/api/health-check
-
+```
 
 Response:
 
+```json
 {
   "status": "ok"
 }
+```
 
-🧾 Generate Invoice
-Endpoint
+---
+
+## 🧾 Generate Invoice
+
+### Endpoint
+
+```
 POST /generate-invoice
+```
 
-Request Body
+### Request Body
+
+```json
 {
   "customer_name": "John Doe",
   "guide_name": "Bali Explorer",
@@ -88,14 +126,16 @@ Request Body
   "price": 150.00,
   "currency": "USD"
 }
+```
 
-Response
+### Response
 
-Content-Type: application/pdf
+* Content-Type: `application/pdf`
+* Returns downloadable professional invoice PDF
 
-Returns downloadable professional invoice PDF
+### Example cURL
 
-Example cURL
+```bash
 curl -X POST http://localhost:8000/generate-invoice \
   -H "Content-Type: application/json" \
   -d '{
@@ -105,47 +145,42 @@ curl -X POST http://localhost:8000/generate-invoice \
     "price": 150.00,
     "currency": "USD"
   }' --output invoice.pdf
+```
 
-🛠 Tech Stack
+---
 
-FastAPI
+## 🛠 Tech Stack
 
-Uvicorn
+* FastAPI
+* Uvicorn
+* ReportLab
+* Pydantic
 
-ReportLab
+---
 
-Pydantic
+## 🔐 Design Principles
 
-🔐 Design Principles
+* Clear separation of concerns
+* Core logic independent from framework
+* Stateless service
+* In-memory PDF generation
+* Clean, testable service layer
 
-Clear separation of concerns
+---
 
-Core logic independent from framework
+## 📈 Possible Improvements
 
-Stateless service
+* Replace float with Decimal for financial precision
+* Add tax and subtotal calculation
+* Add invoice number persistence
+* Add database storage
+* Add authentication
+* Add logging & exception middleware
+* Add unit and integration tests
+* Add Docker support
 
-In-memory PDF generation
+---
 
-Clean, testable service layer
-
-📈 Possible Improvements
-
-Replace float with Decimal for financial precision
-
-Add tax and subtotal calculation
-
-Add invoice number persistence
-
-Add database storage
-
-Add authentication
-
-Add logging & exception middleware
-
-Add unit and integration tests
-
-Add Docker support
-
-📄 License
+## 📄 License
 
 MIT License
