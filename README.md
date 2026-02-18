@@ -36,10 +36,10 @@ Streaming PDF Response
 project-root/
 │
 ├── app/
-│   ├── __init__.py
 │   ├── main.py
 │   ├── router/
 │   ├── services/
+│   ├── schemas/
 │   └── core/
 │
 ├── requirements.txt
